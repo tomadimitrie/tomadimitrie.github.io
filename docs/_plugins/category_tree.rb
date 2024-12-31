@@ -19,7 +19,7 @@ module Jekyll
         EOF
       }
 
-      tokens = input.map { |item| item.url.split("/")[2..-2] + [[item.slug, item.url]] }
+      tokens = input.map { |item| item.url.split("/")[2..-2] + [[item.data["slug"], item.url]] }
       categories = tokens.each_with_object({}) do |current, accumulator|
         previous_accumulator = accumulator
         previous_token = current[0]

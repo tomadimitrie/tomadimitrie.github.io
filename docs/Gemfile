@@ -9,7 +9,7 @@ gem "minima"
 
 group :jekyll_plugins do
   gem "jekyll-remote-theme"
-  gem "jekyll-feed"
+  gem "jekyll-archives-v2"
 end
 
 platforms :mingw, :x64_mingw, :mswin, :jruby do

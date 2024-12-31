@@ -7,10 +7,21 @@ github_username:  tomadimitrie
 theme: minima
 remote_theme: pages-themes/hacker@v0.2.0
 plugins:
-  - jekyll-feed
   - jekyll-remote-theme
+  - jekyll-archives-v2
 
 collections:
   ctfs:
     output: true
+
+category-generator:
+  collections:
+    - ctfs
+
+jekyll-archives:
+  ctfs:
+    enabled:
+      - categories
+    permalinks:
+      categories: "/category/:name/"
 
