@@ -2,13 +2,16 @@
 layout: default
 ---
 
-<h1>{{ page.slug }}</h1>
+<div style="border: dashed #b5e853; padding: 25px;">
+  <h1>{{ page.challenge | unescape }}</h1>
+  <h4 style="color: white;">{{ page.description }}</h4>
 
-{% for category in page.categories %}
-  <a href="/category/{{ category }}">{{ category }}</a>
-  {% unless forloop.last %}
-    <span style="padding: 0 10px; color: #b5e853;">&bull;</span>
-  {% endunless %}
-{% endfor %}
+  {% for category in page.categories %}
+    <a href="/category/{{ category }}">{{ category }}</a>
+    {% unless forloop.last %}
+      <span style="padding: 0 10px; color: #b5e853;">&bull;</span>
+    {% endunless %}
+  {% endfor %}
+</div>
 
 {{ content }}

@@ -1,5 +1,21 @@
 ---
 layout: default
 ---
-aaaa
-{{ page.type }}
+
+<h1>{{ page.title }}</h1>
+<ul>
+    {% for document in page.documents %}
+        <li>
+            <a href="{{ document.url }}">
+                {{- document.challenge | unescape -}}
+            </a>
+            &bull;
+            {% for category in document.categories %}
+                <a href="/category/{{ category }}" style="color: white; text-decoration: none;">
+                    <span style="text-decoration: underline;">{{- category -}}</span>
+                    {% unless forloop.last %} | {% endunless %}
+                </a>
+            {% endfor %}
+        </li>
+    {% endfor %}
+</ul>

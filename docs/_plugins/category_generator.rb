@@ -6,13 +6,15 @@ module Jekyll
         config = @site.config["category-generator"]
         allowed_collections = config["collections"]
         collections = @site.collections.select { |key| allowed_collections.include?(key) }.values
-        for collection in collections
-          for doc in collection.docs
-            new_categories = doc.url.split("/")[1..-2]
+        collections.each { |collection|
+          collection.docs.each { |doc|
+            tokens = doc.url.split("/")
+            new_categories = tokens[1..-3]
             doc.data["categories"] ||= []
-            doc.data["categories"] += new_categories 
-          end
-        end
+            doc.data["categories"] += new_categories
+            doc.data["challenge"] = tokens[-2]
+          }
+        }
       end
     end
   end
