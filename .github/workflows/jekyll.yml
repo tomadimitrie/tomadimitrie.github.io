@@ -36,6 +36,8 @@ jobs:
         run: gem install jekyll
       - name: Install dependencies
         run: bundle install
+      - name: Build node packages
+        run: npm install && npm run build
       - name: Build with Jekyll
         run: bundle exec jekyll build --baseurl "${{ steps.pages.outputs.base_path }}"
         env:
