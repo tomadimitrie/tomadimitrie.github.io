@@ -1,4 +1,5 @@
 ---
+title: Ser Szwajcarski
 description: I like cheese with lots of holes. 🪤🫕🐭
 categories: ["ctf", "hxp 2024"]
 tags: ["pwn"]

@@ -1,4 +1,5 @@
 ---
+title: Respectable NFT
 description: My favorite TikTok influencer told me about a great NFT project that is guaranteed to not be a scam. It even has this cool feature where you can name your token :^)
 categories: ["ctf", "hxp 2024"]
 tags: ["blockchain"]
@@ -6,8 +7,7 @@ tags: ["blockchain"]
 
 We are given a contract based on ERC721, deployed through an upgradeable proxy.
 
-`Setup.sol`
-```
+```js
 //SPDX-License-Identifier: Unlicense
 pragma solidity 0.8.20;
 
@@ -29,9 +29,9 @@ contract Setup {
     }
 }
 ```
+{: file="Setup.sol" }
 
-`UpgradeableProxy.sol`
-```
+```js
 //SPDX-License-Identifier: Unlicense
 pragma solidity 0.8.20;
 
@@ -91,9 +91,9 @@ contract UpgradeableProxy {
     }
 }
 ```
+{: file="UpgradeableProxy.sol" }
 
-`CryptoFlags.sol`
-```
+```js
 //SPDX-License-Identifier: Unlicense
 pragma solidity 0.8.20;
 
@@ -132,6 +132,7 @@ contract CryptoFlags is ERC721 {
     }
 }
 ```
+{: file="CryptoFlags.sol" }
 
 `ERC721_flattended.sol` is just the OpenZeppelin implementation of `ERC721` with all dependencies bundled.
 
